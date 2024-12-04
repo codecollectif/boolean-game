@@ -79,7 +79,11 @@ function App() {
             <span>pas</span>(
           </>
         )}
-        {challenge.colorNot && <span>pas</span>}
+        {challenge.colorNot && (
+          <>
+            <span>pas</span>(
+          </>
+        )}
         {challenge.color && (
           <span
             style={{
@@ -95,17 +99,23 @@ function App() {
             {challenge.color}
           </span>
         )}
-        {challenge.operand}
-        {challenge.numberNot && <span>pas</span>}
+        {challenge.colorNot && ")"}
+        {challenge.operand && <span>{challenge.operand}</span>}
+        {challenge.numberNot && (
+          <>
+            <span>pas</span>(
+          </>
+        )}
         {challenge.number && <span>{challenge.number}</span>}
-        {challenge.globalNot && ")"}
+        {challenge.numberNot && ")"}
+        {challenge.globalNot && " )"}
       </p>
       <div
         ref={animationParent}
         style={{
           display: "inline-grid",
           gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "2rem",
+          gap: "2rem 1rem",
         }}
       >
         {points
@@ -133,6 +143,7 @@ function App() {
           type="button"
           style={{
             backgroundColor: "hsl(0 67% 9%)",
+            color: "white",
             gridColumn: "1 / -1",
             justifySelf: "center",
           }}
