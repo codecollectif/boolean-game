@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Cutive Mono", monospace;
+  font-weight: bold;
+  font-style: normal;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.button {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  color: white;
+  font-size: 2rem;
+  position: relative;
+}
+
+.button.valid::after {
+  content: "✅";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button.invalid::after {
+  content: "❌";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.challenge {
+  min-height: 4rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: hsl(0 67% 9%);
+}
