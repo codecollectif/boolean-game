@@ -27,20 +27,19 @@
   position: relative;
 }
 
-.button.valid::after {
-  content: "✅";
+.answer.checked::after {
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.button.invalid::after {
+.answer.checked.right::after {
+  content: "✅";
+}
+
+.answer.checked.wrong::after {
   content: "❌";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .challenge {

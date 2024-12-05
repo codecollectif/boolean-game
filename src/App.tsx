@@ -63,11 +63,12 @@ function App() {
   const [challenge, setChallenge] = useState(
     makeChallenge(levelPatterns[level]),
   );
+  const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
     console.log(challenge);
-    for (const button of document.getElementsByClassName("button")) {
-      button.classList.remove("valid", "invalid");
+    for (const button of document.getElementsByClassName("answer")) {
+      button.classList.remove("checked");
     }
   }, [challenge]);
 
@@ -118,43 +119,74 @@ function App() {
           gap: "2rem 1rem",
         }}
       >
-        {points
-          .sort(() => Math.random() - 0.5)
-          .map((point) => (
-            <button
-              key={point.value + point.color}
-              type="button"
-              style={{
-                backgroundColor: point.color,
-              }}
-              className="button"
-              onClick={(event) => {
-                if (match(point, challenge)) {
-                  (event.target as HTMLButtonElement).classList.add("valid");
-                } else {
-                  (event.target as HTMLButtonElement).classList.add("invalid");
-                }
-              }}
-            >
-              {point.value}
-            </button>
-          ))}
-        <button
-          type="button"
-          style={{
-            backgroundColor: "hsl(0 67% 9%)",
-            color: "white",
-            gridColumn: "1 / -1",
-            justifySelf: "center",
-          }}
-          className="button"
-          onClick={() => {
-            setLevel((level + 1) % 7);
-            setChallenge(makeChallenge(levelPatterns[(level + 1) % 7]));
-          }}
-        >
-          &#8634;
-        </button>
+        {points.map((point) => (
+          <button
+            key={point.value + point.color}
+            type="button"
+            style={{
+              backgroundColor: point.color,
+            }}
+            className={`button answer ${match(point, challenge) ? "right" : "wrong"}`}
+            onClick={(event) => {
+              (event.target as HTMLButtonElement).classList.add("checked");
+
+              let allRightAnswersChecked = true;
+
+              for (const button of document.querySelectorAll(".answer.right")) {
+                allRightAnswersChecked =
+                  allRightAnswersChecked &&
+                  button.classList.contains("checked");
+              }
+
+              setIsFinished(allRightAnswersChecked);
+            }}
+            disabled={isFinished}
+          >
+            {point.value}
+          </button>
+        ))}
+        {isFinished ? (
+          <button
+            type="button"
+            style={{
+              backgroundColor: "hsl(0 67% 9%)",
+              color: "white",
+              gridColumn: "1 / -1",
+              justifySelf: "center",
+              fontSize: "1.5rem",
+            }}
+            className="button"
+            onClick={() => {
+              points.sort(() => Math.random() - 0.5);
+              setLevel((level + 1) % 7);
+              setChallenge(makeChallenge(levelPatterns[(level + 1) % 7]));
+              setIsFinished(false);
+            }}
+          >
+            👍
+          </button>
+        ) : (
+          <button
+            type="button"
+            style={{
+              backgroundColor: "hsl(0 67% 9%)",
+              color: "white",
+              gridColumn: "1 / -1",
+              justifySelf: "center",
+              fontSize: "1.5rem",
+            }}
+            className="button"
+            onClick={() => {
+              for (const button of document.getElementsByClassName("answer")) {
+                button.classList.add("checked");
+
+                setIsFinished(true);
+              }
+            }}
+          >
+            ??
+          </button>
+        )}
       </div>
     </>
   );
