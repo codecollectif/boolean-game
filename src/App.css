@@ -43,7 +43,7 @@
 }
 
 .challenge {
-  min-height: 4rem;
+  min-height: 8rem;
   margin-bottom: 2rem;
   display: flex;
   flex-direction: row;

@@ -151,15 +151,27 @@ function App() {
             style={{
               backgroundColor: "hsl(0 67% 9%)",
               color: "white",
-              gridColumn: "1 / -1",
-              justifySelf: "center",
+              gridColumn: "2 / 3",
               fontSize: "1.5rem",
             }}
             className="button"
             onClick={() => {
+              let perfect = true;
+
+              for (const button of document.querySelectorAll(".answer.wrong")) {
+                perfect = perfect && !button.classList.contains("checked");
+              }
+
               points.sort(() => Math.random() - 0.5);
-              setLevel((level + 1) % 7);
-              setChallenge(makeChallenge(levelPatterns[(level + 1) % 7]));
+
+              let newLevel = level;
+
+              if (perfect) {
+                newLevel = Math.min(levelPatterns.length - 1, level + 1);
+              }
+
+              setLevel(newLevel);
+              setChallenge(makeChallenge(levelPatterns[newLevel]));
               setIsFinished(false);
             }}
           >
@@ -171,8 +183,7 @@ function App() {
             style={{
               backgroundColor: "hsl(0 67% 9%)",
               color: "white",
-              gridColumn: "1 / -1",
-              justifySelf: "center",
+              gridColumn: "2 / 3",
               fontSize: "1.5rem",
             }}
             className="button"
