@@ -43,13 +43,14 @@
 }
 
 .challenge {
-  min-height: 8rem;
+  min-height: 11rem;
   margin-bottom: 2rem;
   display: flex;
   flex-direction: row;
   gap: 1rem;
   justify-content: center;
   align-items: center;
+  align-content: start;
   flex-wrap: wrap;
   font-size: 2rem;
   color: hsl(0 67% 9%);

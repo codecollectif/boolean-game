@@ -75,6 +75,7 @@ function App() {
   return (
     <>
       <p className="challenge">
+        <span style={{ width: "100%" }}>Clique si :</span>
         {challenge.globalNot && (
           <>
             <span>pas</span>(
