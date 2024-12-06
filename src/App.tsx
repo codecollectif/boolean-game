@@ -75,7 +75,7 @@ function App() {
   return (
     <>
       <p className="challenge">
-        Clique 👆 si
+        👆 Clique si
         <br />
         {challenge.globalNot && <>pas&nbsp;( </>}
         {challenge.colorNot && <>pas&nbsp;( </>}
