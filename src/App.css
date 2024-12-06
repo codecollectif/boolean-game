@@ -13,9 +13,21 @@
 
 #root {
   max-width: 100%;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons {
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 1rem;
+  flex: 1;
+  align-content: start;
 }
 
 .button {
@@ -43,8 +55,18 @@
 }
 
 .challenge {
-  min-height: 11rem;
-  margin-bottom: 2rem;
+  min-height: 4lh;
   font-size: 2rem;
   color: hsl(0 67% 9%);
+
+  & .color {
+    display: inline-block;
+    width: 0;
+    height: 1.8rem;
+    overflow: hidden;
+    padding-left: 1.8rem;
+    border-radius: 50%;
+    position: relative;
+    top: 0.3rem;
+  }
 }

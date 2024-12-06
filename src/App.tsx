@@ -75,21 +75,16 @@ function App() {
   return (
     <>
       <p className="challenge">
-        Clique 👆 si {challenge.globalNot && <>pas&nbsp;( </>}
+        Clique 👆 si
+        <br />
+        {challenge.globalNot && <>pas&nbsp;( </>}
         {challenge.colorNot && <>pas&nbsp;( </>}
         {challenge.color && (
           <code
             style={{
-              display: "inline-block",
-              width: 0,
-              height: "1.8rem",
-              overflow: "hidden",
-              paddingLeft: "1.8rem",
               backgroundColor: challenge.color,
-              borderRadius: "50%",
-              position: "relative",
-              top: "0.3rem",
             }}
+            className="color"
           >
             {challenge.color}
           </code>
@@ -101,14 +96,7 @@ function App() {
         {challenge.numberNot && <>&nbsp;)</>}
         {challenge.globalNot && <>&nbsp;)</>}
       </p>
-      <div
-        ref={animationParent}
-        style={{
-          display: "inline-grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "2rem 1rem",
-        }}
-      >
+      <div ref={animationParent} className="buttons">
         {points.map((point) => (
           <button
             key={point.value + point.color}
@@ -189,6 +177,9 @@ function App() {
           </button>
         )}
       </div>
+      <footer>
+        Inspiré de <a href="https://booleangame.com/">Boolean Game</a>
+      </footer>
     </>
   );
 }
