@@ -75,42 +75,31 @@ function App() {
   return (
     <>
       <p className="challenge">
-        <span style={{ width: "100%" }}>Clique si :</span>
-        {challenge.globalNot && (
-          <>
-            <span>pas</span>(
-          </>
-        )}
-        {challenge.colorNot && (
-          <>
-            <span>pas</span>(
-          </>
-        )}
+        Clique 👆 si {challenge.globalNot && <>pas&nbsp;( </>}
+        {challenge.colorNot && <>pas&nbsp;( </>}
         {challenge.color && (
-          <span
+          <code
             style={{
               display: "inline-block",
               width: 0,
-              height: "2rem",
+              height: "1.8rem",
               overflow: "hidden",
-              paddingLeft: "2rem",
+              paddingLeft: "1.8rem",
               backgroundColor: challenge.color,
               borderRadius: "50%",
+              position: "relative",
+              top: "0.3rem",
             }}
           >
             {challenge.color}
-          </span>
+          </code>
         )}
-        {challenge.colorNot && ")"}
-        {challenge.operand && <span>{challenge.operand}</span>}
-        {challenge.numberNot && (
-          <>
-            <span>pas</span>(
-          </>
-        )}
-        {challenge.number && <span>{challenge.number}</span>}
-        {challenge.numberNot && ")"}
-        {challenge.globalNot && " )"}
+        {challenge.colorNot && <>&nbsp;)</>}
+        {challenge.operand && <> {challenge.operand} </>}
+        {challenge.numberNot && <>pas&nbsp;( </>}
+        {challenge.number && challenge.number}
+        {challenge.numberNot && <>&nbsp;)</>}
+        {challenge.globalNot && <>&nbsp;)</>}
       </p>
       <div
         ref={animationParent}
@@ -176,7 +165,7 @@ function App() {
               setIsFinished(false);
             }}
           >
-            👍
+            👆
           </button>
         ) : (
           <button
@@ -196,7 +185,7 @@ function App() {
               }
             }}
           >
-            ??
+            ?!
           </button>
         )}
       </div>
