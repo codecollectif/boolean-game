@@ -8,11 +8,13 @@ const fromHue = (h: number) => `hsl(${h} 67% 49%)`;
 
 const colors = [fromHue(63), fromHue(303), fromHue(183)];
 
-const points = colors.flatMap((color) => [
-  { value: 1, color },
-  { value: 2, color },
-  { value: 3, color },
-]);
+const points = colors
+  .flatMap((color) => [
+    { value: 1, color },
+    { value: 2, color },
+    { value: 3, color },
+  ])
+  .sort(() => Math.random() - 0.5);
 
 const levelPatterns = ["C", "N", "CoN", "!CoN", "Co!N", "!Co!N", "!!Co!N"];
 
