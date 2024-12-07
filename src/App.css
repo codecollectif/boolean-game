@@ -15,7 +15,7 @@
   max-width: 100%;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 2rem 0 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -26,8 +26,8 @@
   display: inline-grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem 1rem;
-  flex: 1;
   align-content: start;
+  margin-bottom: 1rem;
 }
 
 .button {
@@ -37,20 +37,6 @@
   font-size: 1rem;
   padding: 0.3em 0.6em;
   position: relative;
-}
-
-@media (min-width: 380px) {
-  .button {
-    font-size: 1.5rem;
-    padding: 0.4em 0.8em;
-  }
-}
-
-@media (min-width: 620px) {
-  .button {
-    font-size: 2rem;
-    padding: 0.5em 1em;
-  }
 }
 
 .answer.checked::after {
@@ -90,5 +76,24 @@
   .challenge {
     font-size: 2rem;
     flex: initial;
+  }
+
+  .buttons {
+    flex: 1;
+  }
+
+  .button {
+    font-size: 1.5rem;
+    padding: 0.4em 0.8em;
+  }
+}
+
+@media (min-width: 620px) {
+  #root {
+    padding: 2rem;
+  }
+  .button {
+    font-size: 2rem;
+    padding: 0.5em 1em;
   }
 }

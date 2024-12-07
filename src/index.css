@@ -13,9 +13,16 @@
 }
 
 a {
-  text-underline-offset: 0.5rem;
+  text-underline-offset: 0.25rem;
   color: inherit;
 }
+
+@media (min-width: 620px) {
+  a {
+    text-underline-offset: 0.5rem;
+  }
+}
+
 a:hover {
   text-decoration: none;
 }
