@@ -4,9 +4,9 @@ import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 import "./App.css";
 
-const fromHue = (h: number) => `hsl(${h} 67% 49%)`;
+const fromCH = (c: number, h: number) => `lch(58.1 ${c} ${h})`;
 
-const colors = [fromHue(63), fromHue(303), fromHue(183)];
+const colors = [fromCH(40.7, 255.6), fromCH(67, 114.1), fromCH(70.9, 4.8)];
 
 const points = colors
   .flatMap((color) => [
