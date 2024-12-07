@@ -34,9 +34,23 @@
   border-radius: 50%;
   aspect-ratio: 1;
   color: white;
-  font-size: 2rem;
-  padding: 0.5em 1em;
+  font-size: 1rem;
+  padding: 0.3em 0.6em;
   position: relative;
+}
+
+@media (min-width: 380px) {
+  .button {
+    font-size: 1.5rem;
+    padding: 0.4em 0.8em;
+  }
+}
+
+@media (min-width: 620px) {
+  .button {
+    font-size: 2rem;
+    padding: 0.5em 1em;
+  }
 }
 
 .answer.checked::after {
@@ -56,7 +70,7 @@
 
 .challenge {
   min-height: 4lh;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: hsl(0 67% 9%);
 
   & .color {
@@ -68,5 +82,11 @@
     border-radius: 50%;
     position: relative;
     top: 0.3rem;
+  }
+}
+
+@media (min-width: 380px) {
+  .button {
+    font-size: 2rem;
   }
 }

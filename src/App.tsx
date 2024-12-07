@@ -4,9 +4,12 @@ import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 import "./App.css";
 
+/*
 const fromCH = (c: number, h: number) => `lch(58.1 ${c} ${h})`;
 
 const colors = [fromCH(40.7, 255.6), fromCH(67, 114.1), fromCH(70.9, 4.8)];
+*/
+const colors = ["#1b94d0", "#799600", "#e43074"];
 
 const points = colors
   .flatMap((color) => [
