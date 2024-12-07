@@ -72,6 +72,7 @@
   min-height: 4lh;
   font-size: 1.5rem;
   color: hsl(0 67% 9%);
+  flex: 1;
 
   & .color {
     display: inline-block;
@@ -86,7 +87,8 @@
 }
 
 @media (min-width: 380px) {
-  .button {
+  .challenge {
     font-size: 2rem;
+    flex: initial;
   }
 }
