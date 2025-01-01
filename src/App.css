@@ -12,10 +12,10 @@
 }
 
 #root {
-  max-width: 100%;
-  min-height: 100vh;
+  min-width: 320px;
+  height: 100vh;
   margin: 0 auto;
-  padding: 2rem 2rem 0 1rem;
+  padding: 2rem 1rem 0 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,10 @@
 }
 
 .buttons {
-  display: inline-grid;
+  aspect-ratio: 7.5 / 12;
+  height: calc(100vh - 14.8rem);
+  height: calc(100vh - 2rem - 4lh);
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem 1rem;
   align-content: start;
@@ -34,7 +37,7 @@
   border-radius: 50%;
   aspect-ratio: 1;
   color: white;
-  font-size: 1rem;
+  font-size: 1.5rem;
   padding: 0.3em 0.6em;
   position: relative;
 }
@@ -55,6 +58,7 @@
 }
 
 .challenge {
+  min-height: 12.8rem;
   min-height: 4lh;
   font-size: 1.5rem;
   color: hsl(0 67% 9%);
@@ -83,7 +87,6 @@
   }
 
   .button {
-    font-size: 1.5rem;
     padding: 0.4em 0.8em;
   }
 }

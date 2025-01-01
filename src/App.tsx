@@ -135,7 +135,6 @@ function App() {
               backgroundColor: "hsl(0 67% 9%)",
               color: "white",
               gridColumn: "2 / 3",
-              fontSize: "1.5rem",
             }}
             className="button"
             onClick={() => {
@@ -167,7 +166,6 @@ function App() {
               backgroundColor: "hsl(0 67% 9%)",
               color: "white",
               gridColumn: "2 / 3",
-              fontSize: "1.5rem",
             }}
             className="button"
             onClick={() => {
