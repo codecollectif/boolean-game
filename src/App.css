@@ -23,13 +23,9 @@
 }
 
 .buttons {
-  aspect-ratio: 7.5 / 12;
-  height: calc(100vh - 14.8rem);
-  height: calc(100vh - 2rem - 4lh);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem 1rem;
-  align-content: start;
   margin-bottom: 1rem;
 }
 
@@ -39,6 +35,7 @@
   color: white;
   font-size: 1.5rem;
   padding: 0.3em 0.6em;
+  min-width: calc(3rem + 1.2em);
   position: relative;
 }
 
@@ -58,8 +55,6 @@
 }
 
 .challenge {
-  min-height: 12.8rem;
-  min-height: 4lh;
   font-size: 1.5rem;
   color: hsl(0 67% 9%);
   flex: 1;
@@ -84,10 +79,12 @@
 
   .buttons {
     flex: 1;
+    align-content: center;
   }
 
   .button {
     padding: 0.4em 0.8em;
+    min-width: calc(3rem + 1.6em);
   }
 }
 
@@ -98,5 +95,6 @@
   .button {
     font-size: 2rem;
     padding: 0.5em 1em;
+    min-width: calc(4rem + 2em);
   }
 }
