@@ -12,6 +12,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: white;
+  }
+}
+
 a {
   text-underline-offset: 0.25rem;
   color: inherit;
